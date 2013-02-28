@@ -1,0 +1,29 @@
+{
+  "author": "Karl Düüna <karl.dyyna@gmail.com>",
+  "name": "file-pointer",
+  "description": "Object wrapper for files and folders",
+  "keywords": [
+    "folder",
+    "files",
+    "pointer"
+  ],
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:DeadAlready/node-file-pointer"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "mkdirp":"0.3.x",
+    "rimraf":"2.0.x"
+  },
+  "devDependencies":{
+    "vows":"0.6.x"
+  },
+  "scripts":{
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
