@@ -7,7 +7,7 @@
     "files",
     "pointer"
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git@github.com:DeadAlready/node-file-pointer"
@@ -18,7 +18,6 @@
     "rimraf":"2.0.x"
   },
   "devDependencies":{
-    "vows":"0.6.x"
   },
   "scripts":{
   },
