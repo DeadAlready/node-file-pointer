@@ -93,7 +93,7 @@ These properties are added to the Pointer object properties.
 * _pointers - cached list of fs.readdir results or undefined
 
 * __add(filePath, [content], [force], [callback]) - add a file or directory to the filesystem under current Folder,
-will use File.__create or Folder.__create depending on existance of content
+** It will use File.__create or Folder.__create depending on existence of content
 * __delete([force],[callback]) - delete folder from system, force will decide if rimraf or fs.rmdir is used
 * __list(callback) - use fs.readdir and return results
 * __removeChild(opts) - remove a child object either by property name or object
