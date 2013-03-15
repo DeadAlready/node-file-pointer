@@ -93,7 +93,7 @@ These properties are added to the Pointer object properties.
 * _pointers - cached list of fs.readdir results or undefined
 
 * __add(filePath, [content], [force], [callback]) - add a file or directory to the filesystem under current Folder,
-** It will use File.__create or Folder.__create depending on existence of content
+will use File._\_create or Folder._\_create depending on existence of content
 * __delete([force],[callback]) - delete folder from system, force will decide if rimraf or fs.rmdir is used
 * __list(callback) - use fs.readdir and return results
 * __removeChild(opts) - remove a child object either by property name or object
@@ -107,14 +107,14 @@ The file-pointer will expose the following methods of interest.
 
 Function for creating a file-pointer object
 
-* opts - can be either string or object with the following properties
-** filePath: required
-** type: 'file' or 'directory'
-** stats: FSStat object
-** parent: parent object
-** watch: wheter to start watching the underlying file
+__opts__ - can be either string or object with the following properties
+* - filePath: required
+* - type: 'file' or 'directory'
+* - stats: FSStat object
+* - parent: parent object
+* - watch: wheter to start watching the underlying file
 
-* callback - if defined then fs.stat function is used to determine the type of the object
+__callback__ - if defined then fs.stat function is used to determine the type of the object
 
 ## License
 
