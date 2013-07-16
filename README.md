@@ -96,7 +96,7 @@ These properties are added to the Pointer object properties.
 will use File._\_create or Folder._\_create depending on existence of content
 * __delete([force],[callback]) - delete folder from system, force will decide if rimraf or fs.rmdir is used
 * __list(callback) - use fs.readdir and return results
-* __watchList(callback, [persistent]) - watch the folder changes and run __list on changes to the folder
+* __watchList([persistent], callback) - watch the folder changes and run __list on changes to the folder
 * __removeChild(opts) - remove a child object either by property name or object
 
 
