@@ -17,9 +17,9 @@ These are various examples of using the file-pointer library
 		var fp = require('file-pointer');
 
 		// Basic
-		var obj = fp.create('./node_modules'); // returns Pointer
+		var obj = fp.define('./node_modules'); // returns Pointer
 
-		fp.create('./node_modules', function (err, obj) {
+		fp.define('./node_modules', function (err, obj) {
 			// Obj is a Folder, since the stats were mapped and it was determined to be one
 		});
 
@@ -33,7 +33,7 @@ These are various examples of using the file-pointer library
 		var testFile = new fp.File({pointer: pointer});
 
 		// Create a Folder by defining opts.type
-		var syncFolder = fp.create({filePath: './node_modules, type:'directory'});
+		var syncFolder = fp.define({filePath: './node_modules, type:'directory'});
 
 # Added properties
 
@@ -58,7 +58,7 @@ they are accessible on all types.
 * __stats([force], [callback]) - return _stats or ask for fs.stat
 * __listen(name, fn) - add an event listener
 * __emit(event, [arg1], [arg2], [...]) - emit an event with arguments
-* __startWatch() - open fs.watch and emit "change" and "error" events
+* __startWatch() - open fs.watch and emit "change", "error" and "missing" events
 * __stopWatch() - close fs.watch
 
 None of these properties are enumerable and only _type is configurable.
@@ -96,6 +96,7 @@ These properties are added to the Pointer object properties.
 will use File._\_create or Folder._\_create depending on existence of content
 * __delete([force],[callback]) - delete folder from system, force will decide if rimraf or fs.rmdir is used
 * __list(callback) - use fs.readdir and return results
+* __watchList(callback, [persistent]) - watch the folder changes and run __list on changes to the folder
 * __removeChild(opts) - remove a child object either by property name or object
 
 
@@ -103,7 +104,7 @@ will use File._\_create or Folder._\_create depending on existence of content
 
 The file-pointer will expose the following methods of interest.
 
-### create(opts, [callback])
+### define(opts, [callback])
 
 Function for creating a file-pointer object
 
@@ -112,7 +113,7 @@ __opts__ - can be either string or object with the following properties
 * - type: 'file' or 'directory'
 * - stats: FSStat object
 * - parent: parent object
-* - watch: wheter to start watching the underlying file
+* - watch: 'persistent' or boolean - wheter to start watching the underlying file
 
 __callback__ - if defined then fs.stat function is used to determine the type of the object
 
