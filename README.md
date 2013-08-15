@@ -57,6 +57,8 @@ they are accessible on all types.
 * __delete(callback) - delete file from system
 * __stats([force], [callback]) - return _stats or ask for fs.stat
 * __listen(name, fn) - add an event listener
+* __removeListener(name, fn) - removes previously set listener
+* __deconstruct() - stops watching, removes from parent and all listeners
 * __emit(event, [arg1], [arg2], [...]) - emit an event with arguments
 * __startWatch() - open fs.watch and emit "change", "error" and "missing" events
 * __stopWatch() - close fs.watch
